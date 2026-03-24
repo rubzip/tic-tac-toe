@@ -1,7 +1,7 @@
 from .schemas import Player, UsablePlayer, GameStatus, GameState, Move
 
 
-class TicTacToe:
+class Game:
     def __init__(self, start_player: UsablePlayer = Player.O):
         self.board = [[Player.NONE for _ in range(3)] for _ in range(3)]
         self.turn: UsablePlayer = start_player
