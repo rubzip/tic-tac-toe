@@ -185,17 +185,17 @@ class RandomStrategy(TicTacToeStrategy):
     def strategy(self, board: Board, is_x: bool) -> int:
         move_distribution = self.cpu.get_possible_moves(board, is_x)
         if not move_distribution:
-            return -1, -1
+            return None
         
         moves = list(move_distribution.keys())
         chosen_move = random.choice(moves)
-        return chosen_move // 3, chosen_move % 3
+        return chosen_move
 
 class RandomSmartStrategy(TicTacToeStrategy):
     def strategy(self, board: Board, is_x: bool) -> int:
         move_distribution = self.cpu.get_possible_moves(board, is_x)
         if not move_distribution:
-            return -1, -1
+            return None
         
         moves = list(move_distribution.keys())
         for move in moves:
