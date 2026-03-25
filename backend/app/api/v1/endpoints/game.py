@@ -15,4 +15,4 @@ async def new_game():
 async def get_game(game_id: str):
     if game_id not in manager.games:
         raise HTTPException(status_code=404, detail="Game not found")
-    return manager.games[game_id].get_state()
+    return GameState.from_game(manager.games[game_id])

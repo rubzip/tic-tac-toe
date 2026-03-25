@@ -39,7 +39,7 @@ class ConnectionManager:
         if game_id not in self.games:
             return
 
-        state = self.games[game_id].get_state()
+        state = GameState.from_game(self.games[game_id])
         message = state.model_dump()
 
         for connection in self.active_connections.get(game_id, []):
