@@ -8,13 +8,13 @@ class Move(BaseModel):
     col: Annotated[int, Field(ge=0, le=2)]
 
 
-class Row(RootModel):
+class Row(BaseModel):
     root: List[Player] = Field(..., min_length=3, max_length=3)
 
 
 class GameState(BaseModel):
     board: List[Row] = Field(..., min_length=3, max_length=3)
-    turn: UsablePlayer
+    turn: Player
     status: GameStatus
 
     @classmethod

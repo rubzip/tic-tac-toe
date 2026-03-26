@@ -3,14 +3,14 @@ from typing import Literal
 
 
 class GameStatus(StrEnum):
-    WIN_X = "WIN_X"
-    WIN_O = "WIN_O"
+    WIN_X = "X_WINS"
+    WIN_O = "O_WINS"
     DRAW = "DRAW"
     KEEP_PLAYING = "KEEP_PLAYING"
 
 
 class Player(StrEnum):
-    NONE = " "
+    NONE = ""
     X = "X"
     O = "O"
 

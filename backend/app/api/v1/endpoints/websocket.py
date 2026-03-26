@@ -29,7 +29,7 @@ async def websocket_endpoint(websocket: WebSocket, game_id: str, player: UsableP
                     continue
 
                 try:
-                    game.put(move, player)
+                    game.put(move.row, move.col, player)
                     await manager.broadcast(game_id)
                 except ValueError as e:
                     await websocket.send_json({"error": str(e)})
